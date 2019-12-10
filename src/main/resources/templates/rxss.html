@@ -9,11 +9,12 @@
         Please input your item: <input type="text" name="name"> 
         <input type="submit" value="Search"> 
     </form>
-
+<!--/*
     <td th:switch = "${ name != null }" >
-        <div th:case="true" th:text = "'Sorry, we don't have '+${name}" ></div>
+        <div th:case="true" th:text = "'Sorry, we don\'t have '+${name}" ></div>
         <div th:case="false" th:text = "''" ></div>
     </td>
-
+*/-->
+    <td th:text = "'...'+${name}"></td>
 </body>
 </html>

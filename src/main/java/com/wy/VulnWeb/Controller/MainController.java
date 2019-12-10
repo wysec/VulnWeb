@@ -38,13 +38,13 @@ public class MainController {
         return "rxss";
     }
 
-    /**  XSS
+
     @PostMapping("/rxss")
     public String rxss(@RequestParam Map<String, Object> params, Model model) {
         model.addAttribute("name", params.get("name"));
         return "rxss";
     }
-    */
+    
     @RequestMapping("/search")
     public String search() {
         return "search";
