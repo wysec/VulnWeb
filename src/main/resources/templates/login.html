@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>XSS</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <form method="POST" action="./login">
+        Name:     <input type="text" name="name"><br />
+        Password: <input type="password" name="password"><br /> <br />
+        <input type="submit" value="Login"> Press here to login! <br /> <br />
+    </form>
+
+    <td th:switch = "${ name != null }" >
+        <div th:case="true" th:text = "'Hello: '+${name}" ></div>
+        <div th:case="false" th:text = "''" ></div>
+    </td>
+
+</body>
+</html>

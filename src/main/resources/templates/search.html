@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>XSS</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <form method="POST" action="./search">
+        Please input your item: <input type="text" name="name"> 
+        <input type="submit" value="Search"> 
+    </form><br/><br/>
+
+    <tr  th:each="user : ${user}">
+
+        <td th:text="'Hello '+${user.name}">Name:</td>
+        <td th:text="${', your email is '+user.email}">Email:</td>
+
+    </tr>
+
+</body>
+</html>
