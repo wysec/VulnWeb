@@ -11,8 +11,8 @@
         <input type="submit" value="Login"> Press here to login! <br /> <br />
     </form>
 
-    <td th:switch = "${ name != null }" >
-        <div th:case="true" th:text = "'Hello: '+${name}" ></div>
+    <td th:switch = "${ flag }" >
+        <div th:case="true" th:text = "'Welcome you '+${flag}" ></div>
         <div th:case="false" th:text = "''" ></div>
     </td>
 

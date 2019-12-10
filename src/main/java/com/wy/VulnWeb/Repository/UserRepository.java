@@ -14,9 +14,9 @@ public interface UserRepository extends CrudRepository<User, Integer> {
 
      List<User> findByName(String name);
 
-     /*
+     
      // nativeQuery = true表示使用sql自己的方言查询，想查什么查什么， 按照字段数据类型返回就行了
-     @Query(value = "select ii.image_id from issues_images ii where issue_id = ?1", nativeQuery = true)
-     List<User> findByuserName(String name);
-     */
+     @Query(value = "select count(1) from user u1 where u1.name = ?1 and u1.password = ?2", nativeQuery = true)
+     Integer findNameAndPassword(String name, String password);
+     
 }
